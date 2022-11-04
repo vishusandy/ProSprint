@@ -41,10 +41,10 @@ float playerMaxStamina[MAXPLAYERS+1];
 public Plugin:myinfo =
 {
     name = "Pro Sprint",
-    author = "Greyscale, Vishus",
+    author = "Greyscale, Vishus, Fancy",
     description = "Modified sprint plugin",
     version = "1.0",
-    url = ""
+    url = "https://github.com/vishusandy/ProSprint"
 };
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max) {
