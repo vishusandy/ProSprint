@@ -35,7 +35,7 @@ public void __pl_pro_sprint_SetNTVOptional()
  * 
  * @param client       Client index
  * @param stamina      Amount of total stamina they should have
- * @param duration     Number of seconds they should have the stamina before reverting to default stamina
+ * @param duration     Number of seconds they should have the stamina before reverting to default stamina.  Use 0 for unlimited duration.
  */
 native void ProSprint_SetPlayerStamina(int client, float stamina, float duration);
 

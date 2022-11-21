@@ -38,7 +38,7 @@ float fSpeed[MAXPLAYERS+1];
 
 float playerMaxStamina[MAXPLAYERS+1];
 
-public Plugin:myinfo =
+public Plugin myinfo =
 {
     name = "Pro Sprint",
     author = "Greyscale, Vishus, Fancy",
@@ -106,7 +106,7 @@ public Action RoundStartStamina(Handle timer, int client) {
 }
 
 
-public Action:PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
+public Action PlayerSpawn(Handle:event, const char[] name, bool dontBroadcast)
 {
     new index = GetClientOfUserId(GetEventInt(event, "userid"));
     
@@ -116,14 +116,14 @@ public Action:PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
     mFlux[index] = false;
 }
 
-public Action:PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast)
+public Action PlayerDeath(Handle:event, const char[] name, bool dontBroadcast)
 {
     new index = GetClientOfUserId(GetEventInt(event, "userid"));
     
     StopSprint(index);
 }
 
-public Action:Sprint(client, args)
+public Action Sprint(client, args)
 {
     if (IsPlayerAlive(client))
     {
@@ -140,7 +140,7 @@ public Action:Sprint(client, args)
     return Plugin_Handled;
 }
 
-public Action:FluxStamina(Handle:timer, any:index) {
+public Action FluxStamina(Handle timer, any index) {
     if (index) {
         if (IsClientInGame(index) && !IsFakeClient(index)) {
             float stam = playerMaxStamina[index];
@@ -209,7 +209,7 @@ public Action:FluxStamina(Handle:timer, any:index) {
     KillTimer(timer);
 }
 
-public Action:FluxMovement(Handle:timer, any:index)
+public Action FluxMovement(Handle timer, any index)
 {
     if (index)
     {
@@ -258,7 +258,7 @@ public Action:FluxMovement(Handle:timer, any:index)
     KillTimer(timer);
 }
 
-StartSprint(client)
+void StartSprint(client)
 {
     if (IsClientMovingForward(client))
     {
@@ -285,7 +285,7 @@ StartSprint(client)
     }
 }
 
-StopSprint(client)
+void StopSprint(client)
 {
     inSprint[client] = false;
     
@@ -301,7 +301,7 @@ StopSprint(client)
     }
 }
 
-SetClientSpeed(client, Float:speed)
+void SetClientSpeed(client, float speed)
 {
     if (speed < 1.0)
     {
@@ -314,12 +314,12 @@ SetClientSpeed(client, Float:speed)
     }
 }
 
-Float:GetClientSpeed(client)
+float GetClientSpeed(client)
 {
     return GetEntDataFloat(client, offsSpeed);
 }
 
-bool:IsClientMovingForward(client)
+bool IsClientMovingForward(client)
 {
     new buttons = GetClientButtons(client);
     
