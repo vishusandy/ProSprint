@@ -21,8 +21,8 @@ See [Greyscale's sprint plugin](https://forums.alliedmods.net/showthread.php?p=5
 
 ## Credits
 
-Progress bar: Fancy
-Natives: Vishus
-Sprint: [Greyscale](https://forums.alliedmods.net/member.php?u=33541)
+- Progress bar: Fancy
+- Natives: Vishus
+- [Sprint](https://forums.alliedmods.net/showthread.php?p=567905): [Greyscale](https://forums.alliedmods.net/member.php?u=33541)
 
 For more see the original plugin: [Greyscale's sprint plugin](https://forums.alliedmods.net/showthread.php?p=567905)
